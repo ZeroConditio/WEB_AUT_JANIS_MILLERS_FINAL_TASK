@@ -1,4 +1,4 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   allowCypressEnv: false,
@@ -7,5 +7,8 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       // implement node event listeners here
     },
+    viewportWidth: 1440,
+    viewportHeight: 1400,
+    baseUrl: 'https://demoqa.com/automation-practice-form',
   },
 });

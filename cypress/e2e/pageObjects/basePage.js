@@ -1,4 +1,4 @@
-export class BasePage{
+export class basePage{
     static get url(){
         return '';
     }
