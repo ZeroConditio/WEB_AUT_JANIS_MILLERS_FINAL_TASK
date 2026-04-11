@@ -15,6 +15,7 @@ describe('Final Assignment', () => {
                 day: '28',
                 month: 'Feb',
                 year: '1930',
+                hobbies: 'Music',
                 picture: 'uploadImage.jpg',
                 address: 'street name 123, City',
                 state: 'NCR',
@@ -34,14 +35,23 @@ describe('Final Assignment', () => {
             registrationPage.addressField.type(info.address);
             registrationPage.stateSelect.click().type(info.state + '{enter}');
             registrationPage.citySelect.click().type(info.city + '{enter}');
-            // registrationPage.submitButton.click();
-            // registrationPage.closeButton.click();
+            registrationPage.submitButton.click();
 
+            // Validate data
+            function validateTable(label, correctLabel){
+                cy.contains('td', label).next().should('have.text', correctLabel);
+            }
+
+            validateTable('Student Name', info.name + ' ' + info.last);
+            validateTable('Student Email', info.email);
+            validateTable('Gender', 'Male');
+            validateTable('Mobile', info.mobile);
+            validateTable('Date of Birth', info.day + ' February,' + info.year);
+            validateTable('Subjects', info.subject);
+            validateTable('Hobbies', info.hobbies);
+            validateTable('Picture', info.picture);
+            validateTable('Address', info.address);
+            validateTable('State and City', info.state + ' ' + info.city);
         });
     });
-
-
-
-
-
 });

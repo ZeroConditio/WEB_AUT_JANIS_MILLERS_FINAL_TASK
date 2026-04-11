@@ -63,10 +63,5 @@ export class registrationPage extends basePage{
 
     static get submitButton(){
         return cy.get('#submit');
-    }
-    
-    static get closeButton(){
-        return cy.get('#closeLargeModal');
-    }
-    
+    }    
 }
