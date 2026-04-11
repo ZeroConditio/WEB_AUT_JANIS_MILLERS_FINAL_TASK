@@ -12,12 +12,29 @@ export class registrationPage extends basePage{
         return cy.get('#lastName');
     }
 
+    static get emailField(){
+        return cy.get('#userEmail');
+    }
+
     static get genderRadio(){
         return cy.get('#gender-radio-1');
     }
 
     static get phoneField(){
         return cy.get('#userNumber');
+    }
+
+    static get dobField(){
+        return cy.get('#dateOfBirthInput');
+    }
+
+    static get monthSelect(){
+        return cy.get('.react-datepicker__month-select');
+    }
+
+    static monthOption(){
+        // return cy.contains('.react-datepicker__month-select', month);
+        cy.get('react-datepicker__month-select');
     }
 
     static get subjectField(){
