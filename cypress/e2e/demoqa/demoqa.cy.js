@@ -15,8 +15,10 @@ describe('Final Assignment', () => {
                 day: '28',
                 month: 'Feb',
                 year: '1930',
-                picture: 'uploadImage.jpg'
-
+                picture: 'uploadImage.jpg',
+                address: 'street name 123, City',
+                state: 'NCR',
+                city: 'Delhi'
             }
 
             // Registration page
@@ -29,8 +31,9 @@ describe('Final Assignment', () => {
             registrationPage.subjectField.type(info.subject).press(Cypress.Keyboard.Keys.ENTER);
             registrationPage.hobbiesCheckbox.click();
             registrationPage.pictureUpload.selectFile('cypress/files/' + info.picture);
-
-            
+            registrationPage.addressField.type(info.address);
+            registrationPage.stateSelect.click().type(info.state + '{enter}');
+            registrationPage.citySelect.click().type(info.city + '{enter}');
             // registrationPage.submitButton.click();
             // registrationPage.closeButton.click();
 

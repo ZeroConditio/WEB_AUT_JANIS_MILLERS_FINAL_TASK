@@ -49,6 +49,17 @@ export class registrationPage extends basePage{
         return cy.get('#uploadPicture');
     }
 
+    static get addressField(){
+        return cy.get('#currentAddress');
+    }
+
+    static get stateSelect(){
+        return cy.get('#state');
+    }
+
+    static get citySelect(){
+        return cy.get('#city');
+    }
 
     static get submitButton(){
         return cy.get('#submit');
