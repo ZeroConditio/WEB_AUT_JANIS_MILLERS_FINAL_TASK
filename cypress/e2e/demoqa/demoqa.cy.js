@@ -14,7 +14,8 @@ describe('Final Assignment', () => {
                 subject: 'Economics',
                 day: '28',
                 month: 'Feb',
-                year: '1930'
+                year: '1930',
+                picture: 'uploadImage.jpg'
 
             }
 
@@ -25,9 +26,11 @@ describe('Final Assignment', () => {
             registrationPage.genderRadio.click();
             registrationPage.phoneField.type(info.mobile);
             registrationPage.dobField.click().type('{selectall}').type(info.day + ' ' + info.month + ' ' + info.year).type('{enter}');
-
-
             registrationPage.subjectField.type(info.subject).press(Cypress.Keyboard.Keys.ENTER);
+            registrationPage.hobbiesCheckbox.click();
+            registrationPage.pictureUpload.selectFile('cypress/files/' + info.picture);
+
+            
             // registrationPage.submitButton.click();
             // registrationPage.closeButton.click();
 

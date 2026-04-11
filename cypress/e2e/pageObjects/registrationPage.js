@@ -41,6 +41,15 @@ export class registrationPage extends basePage{
         return cy.get('#subjectsContainer');
     }
 
+    static get hobbiesCheckbox(){
+        return cy.get('#hobbies-checkbox-3');
+    }
+
+    static get pictureUpload(){
+        return cy.get('#uploadPicture');
+    }
+
+
     static get submitButton(){
         return cy.get('#submit');
     }
